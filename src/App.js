@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home'
-import Diary from './components/Diary'
+import Home from './pages/Home'
+import Diary from './pages/Diary'
 import "./sass/index.scss"
 
 
