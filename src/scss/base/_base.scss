@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,300;1,300&display=swap');
+:root {
+    --primary-pink: #ffb3c6;         
+    
+    --background: #fff0f5;       
+
+    --nav-gradient: linear-gradient(to bottom, #FFB3C1 0%, #ffacc5 0%, #FFB3C1 100%);
+    --pink-shadow: 0px 20px 40px 10px rgba(255,135,171,0.35);
+
+    --button: #ffa6c1;
+    --button-hover: #ff87ab;
+    --font-family: "Libre Baskerville", serif;
+}
+
+[data-theme="dark"]{
+    --background: #800f2f;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.app-container{
+    background-color: var(--background);
+    font-family: var(--font-family);
+    overflow-x: hidden;
+    min-height: 100vh;
+    transition: 0.5 ease-in-out;
+    @media screen and (min-width: 280px) and (max-width:1080px) {
+        padding: 0;
+    }
+}
