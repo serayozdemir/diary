@@ -39,8 +39,11 @@
                     cursor: pointer;
                     background: var(--primary-pink);
                     box-shadow: var(--pink-shadow);
-                    transition: box-shadow 0.3s ease;
                     
+                    &:hover{
+                        background: var(--button-hover);
+                        transition: box-shadow 0.3s ease-in-out;
+                    }
                 }
 
             }

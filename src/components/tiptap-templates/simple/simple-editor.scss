@@ -10,8 +10,6 @@ body {
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  color: var(--tt-theme-text);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -50,13 +48,8 @@ body,
   background: transparent;
 }
 
-.tiptap.ProseMirror {
-  font-family: "DM Sans", sans-serif;
-}
-
 .simple-editor-wrapper {
   width: 100vw;
-  height: 100vh;
   overflow: auto;
 }
 
@@ -78,5 +71,61 @@ body,
 @media screen and (max-width: 480px) {
   .simple-editor-content .tiptap.ProseMirror.simple-editor {
     padding: 1rem 1.5rem 30vh;
+  }
+}
+
+
+
+/* Çok geniş ekranlar - sorun yok, dokunma */
+/* 1400px üzeri normal */
+
+/* Büyük ekranlar */
+@media (max-width: 1400px) {
+  .tiptap-toolbar {
+    gap: 6px; /* Boşlukları biraz azalt */
+  }
+}
+
+/* Orta ekranlar */
+@media (max-width: 1200px) {
+  .tiptap-toolbar {
+    flex-wrap: wrap; /* Alta düşmeye izin ver */
+    gap: 4px;
+  }
+  
+  .tiptap-button {
+    padding: 6px 8px;
+  }
+}
+
+/* Küçük laptop */
+@media (max-width: 1024px) {
+  .tiptap-toolbar-separator {
+    display: none; /* Ayraçları kaldır */
+  }
+  
+  .tiptap-button {
+    padding: 5px 7px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .tiptap-button {
+    padding: 6px;
+    min-width: 32px;
+  }
+  
+  .tiptap-button-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Mobil */
+@media (max-width: 480px) {
+  .tiptap-button-text {
+    display: none; /* Sadece ikonlar */
   }
 }
