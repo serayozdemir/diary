@@ -159,7 +159,7 @@ const MobileToolbarContent = ({
   </>
 )
 
-export function SimpleEditor() {
+export function SimpleEditor({ initialContent = null, onUpdate = null }) {
   const isMobile = useIsBreakpoint()
   const { height } = useWindowSize()
   const [mobileView, setMobileView] = useState("main")
@@ -202,7 +202,12 @@ export function SimpleEditor() {
         onError: (error) => console.error("Upload failed:", error),
       }),
     ],
-    // content,
+    content: initialContent, // BUNU EKLE
+    onUpdate: ({ editor }) => {  // BUNU EKLE
+      if (onUpdate) {
+        onUpdate(editor);
+      }
+    },
   })
 
   const rect = useCursorVisibility({

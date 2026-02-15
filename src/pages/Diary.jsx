@@ -1,49 +1,45 @@
-import React, { useEffect, useState }from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from "../components/Navbar"
 import { SimpleEditor } from '@/components/tiptap-templates/simple/simple-editor'
 
-
-const STORAGE_KEY = "diary-content";
-
 export default function Diary() {
-    const [initialContent, setInitialContent] = useState(null);
+    const [htmlContent, setHtmlContent] = useState(""); // HTML olarak tut
     const [isLoaded, setIsLoaded] = useState(false);
 
+    // Sayfa açıldığında localStorage'dan oku
     useEffect(() => {
-        try {
-        const saved = localStorage.getItem(STORAGE_KEY);
+        const saved = localStorage.getItem("gunluk");
         if (saved) {
-            setInitialContent(JSON.parse(saved));
-        }
-        } catch (error) {
-        console.error("localStorage'dan yükleme hatası:", error);
+            setHtmlContent(saved);
         }
         setIsLoaded(true);
     }, []);
 
-      // Editor henüz yüklenmemişse loading göster
+    // Kaydet
+    const kaydet = () => {
+        localStorage.setItem("gunluk", htmlContent);
+        alert(" Kaydedildi!");
+    };
+
     if (!isLoaded) {
         return <div>Yükleniyor...</div>;
     }
 
-  return (
-    <div className='diary-page'>
-        <Navbar/>
-        <div className='editor'>
-            <SimpleEditor
-                key={initialContent ? "loaded" : "empty"} // İçerik değiştiğinde yeniden mount et
-                initialContent={initialContent}
-                onUpdate={(content) => {
-                // Her değişiklikte localStorage'a kaydet
-                try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(content));
-                } catch (error) {
-                    console.error("localStorage'a kaydetme hatası:", error);
-                }
-                }}
-            />
-            <button>Günlüğü Kaydet!</button>
+    return (
+        <div className='diary-page'>
+            <Navbar/>
+            <div className='editor'>
+                <SimpleEditor
+                    onUpdate={(editor) => {
+                        // Editor'dan HTML al (okunabilir)
+                        const html = editor.getHTML();
+                        setHtmlContent(html);
+                    }}
+                />
+                <button onClick={kaydet}>
+                    Günlüğü Kaydet!
+                </button>
+            </div>
         </div>
-    </div>
-  )
+    )
 }

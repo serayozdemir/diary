@@ -100,10 +100,7 @@ body,
 
 /* Küçük laptop */
 @media (max-width: 1024px) {
-  .tiptap-toolbar-separator {
-    display: none; /* Ayraçları kaldır */
-  }
-  
+
   .tiptap-button {
     padding: 5px 7px;
     font-size: 14px;
@@ -123,9 +120,3 @@ body,
   }
 }
 
-/* Mobil */
-@media (max-width: 480px) {
-  .tiptap-button-text {
-    display: none; /* Sadece ikonlar */
-  }
-}
