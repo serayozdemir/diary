@@ -71,9 +71,9 @@ import { ThemeToggle } from "@/components/tiptap-templates/simple/theme-toggle"
 import { handleImageUpload, MAX_FILE_SIZE } from "@/lib/tiptap-utils"
 
 // --- Styles ---
-import "./simple-editor.scss"
+import "@/components/tiptap-templates/simple/simple-editor.scss"
 
-import content from "./data/content.json"
+import content from "@/components/tiptap-templates/simple/data/content.json"
 
 const MainToolbarContent = ({
   onHighlighterClick,
