@@ -1,46 +1,138 @@
 @import "../base/base";
 
-.editor {
 
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  
-  .simple-editor-wrapper{
+.diary-page{
 
-    .tiptap-toolbar{
-      
-      background: var(--tiptap-toolbar);
+  .editor {
 
-    }
-
-    .tiptap.ProseMirror.simple-editor{
-      font-family: var(--font-family);
-      
-
-    }
-
-  }
-
-  button{
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
-    border: 2px solid var(--button);
-    border-radius: 20px;
-    cursor: pointer;
-    background: var(--primary-pink);
-    box-shadow: var(--pink-shadow);
-
-    &:hover{
-      background: var(--button-hover);
-      transition: box-shadow 0.3s ease-in-out;
-    }
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     
+    .simple-editor-wrapper{
+
+      .tiptap-toolbar{
+        
+        background: var(--tiptap-toolbar);
+
+      }
+
+      .tiptap.ProseMirror.simple-editor{
+        font-family: var(--font-family);
+        
+
+      }
+
+    }
+
+    button{
+      padding: 10px;
+      margin: 5px;
+      text-align: center;
+      border: 2px solid var(--button);
+      border-radius: 20px;
+      cursor: pointer;
+      background: var(--primary-pink);
+      box-shadow: var(--pink-shadow);
       
+
+      &:hover{
+        background: var(--button-hover);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+    }
+
+    .save-button{
+      font-family: var(--font-family);
+      font-size: medium;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
   }
+
+  .separator{
+    margin: 60px 0;
+    background-color: var(--primary-pink);
+    border: none;
+    height: 1px;
+
+
+  }
+
+  .saved-diaries{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    h4{
+      
+      margin: 50px;
+      padding: 10px;
+      width: fit-content;
+      background: var(--button);
+      border-radius: 30px;
+      box-shadow: var(--pink-shadow);
+
+    }
+
+    button{
+      padding: 10px;
+      margin: 50px;
+      text-align: center;
+      border: 2px solid var(--button);
+      border-radius: 20px;
+      cursor: pointer;
+      background: var(--primary-pink);
+      box-shadow: var(--pink-shadow);
+    }
+  }
+
+
+.popup-overlay {
+  position: fixed; /* Ekranın üstünde sabit dur */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Tam ekran genişlik */
+  height: 100vh; /* Tam ekran yükseklik */
+  background: rgba(0, 0, 0, 0.5); /* Karartma efekti */
+  display: flex; /* İçeriği ortala */
+  justify-content: center; /* Yatayda ortala */
+  align-items: center; /* Dikeyde ortala */
+  z-index: 1000; /* En üstte olsun */
+
+  .popup-content {
+    background: var(--primary-pink);
+    border-radius: 30px;
+    padding: 30px;
+    max-width: 600px; /* Maksimum genişlik */
+    max-height: 80vh; /* Ekranın %80'i kadar yüksek */
+    overflow-y: auto; /* İçerik taşarsa scroll */
+    position: relative; /* Close butonu için */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Gölge efekti */
+
+    .popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
 
 }
 
