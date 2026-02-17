@@ -11,10 +11,23 @@
     --button: #ffa6c1;
     --button-hover: #ff87ab;
     --font-family: "Libre Baskerville", serif;
+    --text-color: #1a0a10;
 }
 
-[data-theme="dark"]{
-    --background: #800f2f;
+[data-theme="dark"],
+.dark {
+    --background: #fb6f92;
+    --primary-pink:  #fa557e;
+    --tiptap-toolbar: #fe4a83;   
+
+    --nav-gradient: linear-gradient(to bottom, #FF477E 0%, #FF7096 0%, #FF477E 100%);
+    --pink-shadow: 0px 20px 40px 10px rgba(216,17,89,0.40);
+
+    --button: #f34d77;
+    --button-hover: #ff477e;
+
+    --text-color: #495057;
+
 
 }
 
@@ -31,6 +44,7 @@ html {
 .app-container{
     background-color: var(--background);
     font-family: var(--font-family);
+    color: var(--text-color);
     overflow-x: hidden;
     min-height: 100vh;
     transition: 0.5 ease-in-out;

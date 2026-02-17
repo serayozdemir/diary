@@ -47,6 +47,7 @@
 
     .save-button{
       font-family: var(--font-family);
+      background: var(--button) ;
       font-size: medium;
       font-weight: 600;
       margin-bottom: 30px;
@@ -73,22 +74,22 @@
     h4{
       
       margin: 50px;
-      padding: 10px;
+      padding: 12px 20px;
       width: fit-content;
-      background: var(--button);
+      background: var(--primary-pink);
       border-radius: 30px;
       box-shadow: var(--pink-shadow);
 
     }
 
-    button{
+    button.tarih{
       padding: 10px;
-      margin: 50px;
+      margin: 10px;
       text-align: center;
       border: 2px solid var(--button);
       border-radius: 20px;
       cursor: pointer;
-      background: var(--primary-pink);
+      background: var(--button);
       box-shadow: var(--pink-shadow);
     }
   }

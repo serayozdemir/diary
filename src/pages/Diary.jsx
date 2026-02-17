@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from "../components/Navbar"
 import { SimpleEditor } from '@/components/tiptap-templates/simple/simple-editor'
+import Footer from "../components/Footer"
 
 export default function Diary() {
     const [htmlContent, setHtmlContent] = useState(""); 
@@ -78,18 +79,20 @@ export default function Diary() {
                     }}
                 />
                 <button className='save-button' onClick={kaydet}>
-                    Günlüğü Kaydet!
+                    Save!
                 </button>
             </div>
             <hr className="separator" />
             <div className='saved-diaries'>
-                <h4>Kaydedilen Günlükler</h4>
+                <h4>Saved Diaries</h4>
                 {tarihler.map((tarih) => (
-                    <button key={tarih} onClick={() => tarihGoster(tarih)}>
+                    <button className="tarih" key={tarih} onClick={() => tarihGoster(tarih)}>
                         {tarih}
                     </button>
                 ))}
             </div>
+
+            <Footer/>
 
             {/* Pop-up */}
             {popupIcerik && (
@@ -101,6 +104,8 @@ export default function Diary() {
                     </div>
                 </div>
             )}
+
+            
         </div>
     )
 }
