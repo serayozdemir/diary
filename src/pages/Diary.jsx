@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from "../components/Navbar"
 import { SimpleEditor } from '@/components/tiptap-templates/simple/simple-editor'
-import Footer from "../components/Footer"
+
 
 export default function Diary() {
     const [htmlContent, setHtmlContent] = useState(""); 
@@ -92,7 +92,6 @@ export default function Diary() {
                 ))}
             </div>
 
-            <Footer/>
 
             {/* Pop-up */}
             {popupIcerik && (
